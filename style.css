@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: sans-serif;
+
+}
+
+.grid-container{
+    height: 100vh;
+    width: 90%;
+    max-width: 100rem;
+    margin: 0 auto;
+    display:grid;
+    gap: 1rem;
+    grid-template: 
+    "header     header      header"     80px
+    "main       main        main"       auto
+    "footer     footer      footer"     60px;
+}
+
+.header{
+    grid-area: header;
+    border: 1px solid #38383a;
+    background-color:#1D0158 ;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    max-width: 100rem;
+    width: inherit;
+    height: 8rem;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo{
+    padding: 0 5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: silver;
+    margin-left: 1rem;
+    width: max-content;
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    margin-right: 4rem;
+}
+
+.menu-items{
+    margin: 0 1rem;
+    width: max-content;
+}
+
+.menu-links{
+    text-decoration: none;
+    color: silver;
+    display: block;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 2rem;
+}
+
+.menu-links:hover{
+    background: rgba(0,0,0,0.5);
+}
+
+.btn-menu{
+    margin-right: 3rem;
+    font-size: 2.5rem;
+    color: silver;
+    cursor: pointer;
+    display: none;
+}
+
+.mostrar{
+    top:8rem;
+}
+
+.main{
+    grid-area: main;
+    display: grid;
+    gap: 10px;
+
+}
+
+.secciones{
+    border: 1px solid black;
+    height: 600px;
+    box-shadow: 1px 1px 3px 2px black;
+    padding-top: 100px;
+    padding-left: 20px;
+    font-size: 2rem;font-weight: bold;
+}
+
+.secciones:nth-child(1){  
+    background: springgreen; 
+}
+.secciones:nth-child(2){
+    background: Chocolate;
+}
+
+.secciones:nth-child(3){
+    background: CadetBlue;
+}
+
+.secciones:nth-child(4){
+    background: DeepPink;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border: 1px solid black;
+    grid-area: footer;
+    background-color:#1D0158 ;
+    color: silver;
+}
+
+@media(max-width:850px){
+    .logo{
+        padding: 0 3rem;
+        font-size: 2rem;
+    }
+
+    .menu-links{
+        font-size: 1.8rem;
+    }
+}
+
+@media(max-width:768px){
+
+    .btn-menu{
+        display:inline-flex;
+    }
+
+    .menu{   
+        position: fixed;
+        max-width: 90%;
+        width: inherit;
+        height:100%;
+        background: rgba(0,0,0,.9);
+        top: -100vh;
+        text-align: center;
+        transition: all 1s;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-items{
+        padding: .5rem ;
+        width: inherit;
+    }
+
+    .menu-links{
+        margin: 3rem 0 0 0;
+        line-height: 3rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        width: inherit;
+    }
+
+    .menu-items:hover{
+        background:none;
+    }
+
+    .menu-links:hover{
+        color: chartreuse;
+    }
+
+    .logo{
+        padding: 0 2rem;
+        font-size: 1.5rem;
+    }
+     .mostrar{
+        top:8rem;
+    }
+
+}
+
+/* MediaQuery para mostrar scroll en orientacion LandScape */
+@media(max-width:858px) and (orientation:landscape){
+    .menu-items{
+        margin: .5rem 0 0 0 ;
+    }
+    .menu{
+        overflow: scroll;
+        height: calc(100%-8rem);
+    }
+}
+
